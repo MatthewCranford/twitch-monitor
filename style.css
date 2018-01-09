@@ -1,0 +1,79 @@
+/* twitch brand color   */
+
+/* ====================
+    ELEMENTS
+======================= */
+
+html,
+body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: #f5f5f5;
+  color: #1a1a1a;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+}
+
+a {
+  color: #1a1a1a;
+}
+
+  a:hover {
+    text-decoration: none;
+    color: #1a1a1a;
+    filter: brightness(255%);
+  }
+
+  a:active{
+    text-decoration: none;
+    color: #1a1a1a;
+    filter: brightness(355%);
+  }
+/* ====================
+    CLASSES
+======================= */
+
+
+
+/* ====================
+    IDs
+======================= */
+
+#title-box {
+  background-color: #6441A4;
+  color: #f5f5f5;
+  padding: 1rem;
+}
+
+#title {
+  display: inline-block;
+}
+
+#title-icon {
+  font-size: 2rem;
+  padding-right: .5rem;
+}
+
+#streamer-box {
+  background-color: #6441A4;
+  margin-top: 3rem;
+  padding: 1rem;
+  width: 80%;
+  color: #f5f5f5;
+}
+
+#streamer-list {
+  padding: 0;
+}
+
+
+/* ====================
+    Media Queries
+======================= */
