@@ -5,24 +5,29 @@ $(document).ready(function() {
   for (var i = 0; i < users.length; i++) {
     (function(i) {
       console.log(users[i]);
-      $("#streamer-list").append($("<li>").append($("<img>").attr("class", "logo" + i)));
-      $("streamer-list").append($("<li>").append($("<span>").attr("class", "display-name" + i)));
+      $("#streamers-list").append($("<li>").attr("id", i));
+
+      $("#" + i).append($("<img>").attr("id", "logo" + i).attr("class", "logo"));
+      $("#" + i).append($("<span>").attr("id", "display-name" + i).attr("class", "display-name"));
+      $("#" + i).append($("<span>").attr("id", "status" + i).attr("class", "status"));
+
       var url = "https://wind-bow.gomix.me/twitch-api/users/" + users[i] + "/?callback=?";
       console.log(url); 
       
       $.getJSON(url, function(data) {
-        console.log("enter json");
-        $(".logo" + i).attr("src",data.logo); 
-        $(".display-name" + i).html(data.display_name);
+        // console.log("entering json");
+        $("#logo" + i).attr("src",data.logo); 
+        $("#display-name" + i).html(data.display_name);
         var id = data._id;
         var url = "https://wind-bow.gomix.me/twitch-api/streams/" + users[i] + "/?callback=?";
         console.log(url);
         $.getJSON(url, function(data) {
+          console.log(url +"entering 2nd json");
             if(data.stream === null) {
-              $(".status").html("Offline");
+              $("#status" + i).html("Offline");
             }
             else {
-              $(".status").html(data.stream.channel.status);
+              $("#status" + i).html(data.stream.channel.status);
             }
         });
       });
