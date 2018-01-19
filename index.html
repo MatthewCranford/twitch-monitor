@@ -11,23 +11,33 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
 </head>
 <body>
-  <header> 
-    <div id="title-box" class="container">
-      <span id="title-icon"><i class="fab fa-twitch"></i></span>
-      <h1 id="title">Twitch Monitor</h1> 
-    </div>
+  <header id="page-header"> 
+    <span id="page-title-icon"><i class="fab fa-twitch"></i></span>
+    <h1 id="page-title">Twitch Monitor</h1> 
   </header>
-  <main id="wrapper">
-    <section id="streamers" class="container">
-      <h4>Streamers</h4>
-      <ul id="streamers-list" type="none">
-      </ul>
-    </section>
+  <main id="main-wrapper">
+    <div id="streamer-container" class="container">
+      <header id="streamer-header">
+        <h4 id="streamer-title">Streamers</h4>
+        <ul id="streamer-tabs">
+          <li>
+            <div class="tab-container">
+              <span id="all-tab"></span>
+            </div>
+           </li>
+          <li><span>Online</span></li>
+          <li><Span>Offline</Span></li>
+        </ul>
+      </header>
+      <div id="streamer-list-container" class="container">
+        <ul id="streamer-list" type="none">
+        </ul>
+      </div>
+    </div>
   </main>
   <footer> 
     <span>Coded by <a href="https://codepen.io/MatthewCranford/">Matthew Cranford</a></span>
   </footer>
-</div>
-  <script src="script.js"></script>  
+<script src="script.js"></script>  
 </body>
 </html>

@@ -1,11 +1,11 @@
 $(document).ready(function() {
   
-  var users = ["esl_sc2", "freecodecamp"];
+  var users = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
   var streamerList = $("#streamer-list");
   for (var i = 0; i < users.length; i++) {
     (function(i) {
       console.log(users[i]);
-      $("#streamers-list").append($("<li>").attr("id", i));
+      $("#streamer-list").append($("<li>").attr("id", i));
 
       $("#" + i).append($("<img>").attr("id", "logo" + i).attr("class", "logo"));
       $("#" + i).append($("<span>").attr("id", "display-name" + i).attr("class", "display-name"));

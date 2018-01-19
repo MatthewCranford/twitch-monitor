@@ -6,16 +6,14 @@ html,
 body {
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f5f5f5;
+  background-color: #464545;
   color: #1a1a1a;
 }
 
 footer {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
   padding: 1rem;
+  text-align: center;
 }
 
 a {
@@ -38,62 +36,93 @@ a {
     CLASSES
 ======================= */
 
-  .logo {
-    width: 50px;
-    border: solid 3px white;
-    border-radius: 50%;
-  }
+.logo {
+  width: 50px;
+  border: solid 3px white;
+  border-radius: 50%;
+}
 
-  .display-name {
-    margin-left: 1rem;
-  }
+.display-name {
+  margin-left: 1rem;
+}
 
-  .status {
-    font-style: italic;
-    margin-left: 1rem;
-  }
+.status {
+  font-style: italic;
+  margin-left: 1rem;
+}
+
+.tab-container {
+  background-color: rgb(134, 134, 134);
+  width: 5px;
+}
 
 /* ====================
     IDs
 ======================= */
 
-#title-box {
+#page-header {
   background-color: #6441A4;
   color: #f5f5f5;
   padding: 1rem;
+  width: 100%
 }
 
-#title {
-  display: inline-block;
-}
-
-#title-icon {
+#page-title-icon {
   font-size: 2rem;
   padding-right: .5rem;
 }
 
-#streamers {
+#page-title {
+  display: inline-block;
+}
+
+#streamer-container {
   background-color: #6441A4;
   margin-top: 3rem;
-  padding: 1rem;
+  padding: 0;
   width: 80%;
   color: #f5f5f5;
 }
 
-#streamers-list {
+#streamer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #4c327c;
+  padding: .5rem 0;
+}
+
+#streamer-title {
+  display: inline-block;
+  margin: 0 0 0 1rem;;
+  font-size: 2rem;
+}
+
+#streamer-tabs {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+  #all-tab {
+    border: solid 5px black;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+#streamer-list {
   padding: 0;
   display: flex;
   flex-direction: column; 
   flex-basis: 2rem;
 }
 
-#streamers-list li {
-  width: 100%;
-  background-color: red;
-  margin-bottom: 1rem;
-}
-
-
+  #streamer-list li {
+    width: 100%;
+    background-color: red;
+    margin-bottom: 1rem;
+  }
 
 /* ====================
     Media Queries
