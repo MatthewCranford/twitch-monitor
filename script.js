@@ -34,8 +34,7 @@ $(document).ready(function() {
     })(i);
   };
 
-  function fetchData (url, user) {
-    
-    
-  } 
+  $(".all-container").hover(function() {
+    $("#tab-text").css("display", "inline-block");
+  })
 });
