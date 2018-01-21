@@ -5,7 +5,7 @@ $(document).ready(function() {
   for (var i = 0; i < users.length; i++) {
     (function(i) {
       console.log(users[i]);
-      $("#streamer-list").append($("<li>").attr("id", i));
+      $("#streamer-list").append($("<li>").attr("id", i).attr("class", "streamer-list-item"));
 
       $("#" + i).append($("<img>").attr("id", "logo" + i).attr("class", "logo"));
       $("#" + i).append($("<span>").attr("id", "display-name" + i).attr("class", "display-name"));
