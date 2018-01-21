@@ -34,7 +34,11 @@ $(document).ready(function() {
     })(i);
   };
 
-  $(".all-container").hover(function() {
-    $("#tab-text").css("display", "inline-block");
-  })
+  // $("#all-container").mouseout(function() {
+  //   $("#all-text").css("display", "none");
+  // })
+
+  // $("#all-container").hover(function() {
+  //   $("#all-text").css("opacity", "0");
+  // })
 });
