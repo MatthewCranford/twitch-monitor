@@ -36,20 +36,6 @@ a {
     CLASSES
 ======================= */
 
-.logo {
-  width: 50px;
-  border: solid 3px white;
-  border-radius: 50%;
-}
-
-.display-name {
-  margin-left: 1rem;
-}
-
-.status {
-  font-style: italic;
-  margin-left: 1rem;
-}
 
 .tab-container {
   background-color: rgb(163, 162, 162);
@@ -62,12 +48,10 @@ a {
   align-items: center;
   margin-bottom: .3rem;
   transition: all .5s ease-in-out;
-  
 }
 
-
   .tab-container:hover {
-    width: 80px;
+    width: 65px;
   }
 
 .tab-icon {
@@ -76,34 +60,55 @@ a {
   border-radius: 50%;
   height: 10px;
   width: 10px;
-  background-color: #ffffff;
 }
 
 .tab-text {
   position: absolute;
-  visibility: hidden;
+  text-align: right;
   color: black;
-  margin-right: .25rem;
-  transition: all 1s ease-in-out;
+  transition: opacity 0s linear;
+  width: 60px;
+  visibility: hidden; 
+  opacity: 0;
+  font-size: .6rem;
+  font-weight: bold;
+}
+  .tab-container:hover .tab-text {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: .5s;
+  }
+
+.streamer-list-item {
+  background-color: red;
+  margin-bottom: .1rem;
+  padding: .5rem;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
   
 }
 
-@keyframes fadein {
-  from {
-      opacity:0;
+  .logo {
+    width: 50px;
+    height: 50px;
+    border: solid 3px white;
+    border-radius: 50%;
+    
   }
-  to {
-      opacity:1;
+
+  .display-name {
+    min-width: 40%;
+    margin-left: 2rem;
   }
-}
 
-
-.tab-container:hover .tab-text {
-  opacity: 1;
-  display: inline-block;
-  width: initial;
-}
-
+  .status {
+    font-style: italic;
+    max-width: 25%;
+  }
 
 
 /* ====================
@@ -127,10 +132,10 @@ a {
 }
 
 #streamer-container {
-  background-color: #6441A4;
+  background-color: #f1f1f1;
   margin-top: 3rem;
-  padding: 0;
-  width: 80%;
+  padding: 0 0 0 0;
+  width: 90%;
   color: #f5f5f5;
 }
 
@@ -157,18 +162,33 @@ a {
   padding: 0;
 }
 
-#streamer-list {
+  #all-icon {
+    background-color: #464545;
+  }
+
+  #online-icon {
+    background-color: #2eca36;
+  }
+
+  #offline-icon {
+    background-color: #e21d1d;
+  }
+
+
+#streamer-list-container {
   padding: 0;
+}
+
+#streamer-list {
+  padding: .1rem 0 0 0;
   display: flex;
   flex-direction: column; 
   flex-basis: 2rem;
+  background-color: #f1f1f1;
+  padding: none;
+
 }
 
-  #streamer-list li {
-    width: 100%;
-    background-color: red;
-    margin-bottom: 1rem;
-  }
 
 /* ====================
     Media Queries
