@@ -35,6 +35,8 @@ $(document).ready(function() {
   };
 
   $(".tab-container").click(function() {
+    // $(".tab-text").css("display", "none");
+    // $(this).find(".tab-text").css("display", "block");
     $(".tab-container").css("width", "15px");
     $(this).css("width", "65px");
   })
