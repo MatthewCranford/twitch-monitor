@@ -34,9 +34,10 @@ $(document).ready(function() {
     })(i);
   };
 
-  // $("#all-container").mouseout(function() {
-  //   $("#all-text").css("display", "none");
-  // })
+  $(".tab-container").click(function() {
+    $(".tab-container").css("width", "15px");
+    $(this).css("width", "65px");
+  })
 
   // $("#all-container").hover(function() {
   //   $("#all-text").css("opacity", "0");
