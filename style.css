@@ -166,6 +166,16 @@ a {
     font-size: 2rem;
   }
 
+  #streamer-add-btn {
+    font-size: 2rem;
+    line-height: 75%;
+    margin-right: auto;
+    margin-left: 1rem;
+    cur
+
+
+  }
+
   #streamer-tabs {
     display: flex;
     flex-direction: column;

@@ -29,10 +29,24 @@ $(document).ready(function() {
             else {
               $("#status" + i).html(data.stream.channel.status);
             }
+            colorListItem();
         });
       });
     })(i);
   };
+
+  function colorListItem() {
+    $("#streamer-list li").each(function(index) {
+      if($(this).find(":nth-child(3)").text() == "Offline") {
+        $(this).css("background-color","red");
+      }
+      else {
+        $(this).css("background-color","green");
+      }
+    });
+  }
+
+  
 
   $("#all-container").click(function() {
     $("#streamer-list li").each(function(index) {
