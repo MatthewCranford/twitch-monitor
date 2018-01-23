@@ -35,12 +35,37 @@ $(document).ready(function() {
   };
 
   $("#all-container").click(function() {
-    $("#streamer-list").each(function(index) {
-      if($(this).find("#status" + index).text("offline")) {
+    $("#streamer-list li").each(function(index) {
+      $(this).css("display","flex");
+    });
+  });
+
+  $("#online-container").click(function() {
+    $("#streamer-list li").each(function(index) {
+      console.log($(this));
+      if($(this).find(":nth-child(3)").text() == "Offline") {
+        $(this).css("display","none");
         console.log("true");
+      }
+      else {
+        $(this).css("display","flex");
       }
     });
   });
+
+  $("#offline-container").click(function() {
+    $("#streamer-list li").each(function(index) {
+      console.log($(this));
+      if($(this).find(":nth-child(3)").text() !== "Offline") {
+        $(this).css("display","none");
+        console.log("true");
+      }
+      else {
+        $(this).css("display","flex");
+      }
+    });
+  });
+
 
   $(".tab-container").click(function() {
     // $(".tab-text").css("display", "none");
