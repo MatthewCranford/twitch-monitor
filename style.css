@@ -72,8 +72,8 @@ a {
   color: black;
   transition: opacity 0s linear;
   width: 60px;
-  /* visibility: hidden; 
-  opacity: 0; */
+  visibility: hidden; 
+  opacity: 0;
   font-size: .6rem;
   font-weight: bold;
 }
@@ -81,11 +81,16 @@ a {
   .tab-container:hover .tab-text {
     visibility: visible;
     opacity: 1;
-    transition-delay: .5s;
+    transition-delay: .4s;
   }
 
-.tab-clicked {
+.toggled-tab {
   width: 65px;
+}
+
+.toggled-text {
+  visibility: visible;
+  opacity: 1;
 }
 
 .streamer-list-item {

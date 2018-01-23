@@ -37,9 +37,10 @@ $(document).ready(function() {
   $(".tab-container").click(function() {
     // $(".tab-text").css("display", "none");
     // $(this).find(".tab-text").css("display", "block");
-  
-    $(".tab-container").removeClass("tab-clicked");
-    $(this).addClass("tab-clicked");
+    $(".tab-container").removeClass("toggled-tab");
+    $(".tab-container").find(":nth-child(2)").removeClass("toggled-text");
+    $(this).addClass("toggled-tab");
+    $(this).find(":nth-child(2)").addClass("toggled-text");
   });
 
   // $(".tab-container").mouseover(function() {
