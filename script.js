@@ -37,11 +37,14 @@ $(document).ready(function() {
   $(".tab-container").click(function() {
     // $(".tab-text").css("display", "none");
     // $(this).find(".tab-text").css("display", "block");
-    $(".tab-container").css("width", "15px");
-    $(this).css("width", "65px");
-  })
+  
+    $(".tab-container").removeClass("tab-clicked");
+    $(this).addClass("tab-clicked");
+  });
 
-  // $("#all-container").hover(function() {
-  //   $("#all-text").css("opacity", "0");
+  // $(".tab-container").mouseover(function() {
+  //   $(".tab-container").css("width", "15px" );
+  //   $(this).css("width", "65px" );
+    
   // })
 });

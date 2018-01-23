@@ -58,12 +58,6 @@ a {
     width: 65px;
   }
 
-  .tab-container:active {
-    width: 65px;
-  }
-
-
-
 .tab-icon {
   margin-left: .25rem;
   border: solid 1px black;
@@ -90,6 +84,10 @@ a {
     transition-delay: .5s;
   }
 
+.tab-clicked {
+  width: 65px;
+}
+
 .streamer-list-item {
   background-color: red;
   margin-bottom: .1rem;
@@ -99,8 +97,6 @@ a {
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-
-  
 }
 
   .logo {
@@ -108,13 +104,11 @@ a {
     height: 50px;
     border: solid 3px white;
     border-radius: 50%;
-   
   }
 
   .display-name {
     flex-basis: 40%;
     font-size: .9rem;
-  
   }
 
   .status {
