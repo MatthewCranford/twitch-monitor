@@ -34,6 +34,14 @@ $(document).ready(function() {
     })(i);
   };
 
+  $("#all-container").click(function() {
+    $("#streamer-list").each(function(index) {
+      if($(this).find("#status" + index).text("offline")) {
+        console.log("true");
+      }
+    });
+  });
+
   $(".tab-container").click(function() {
     // $(".tab-text").css("display", "none");
     // $(this).find(".tab-text").css("display", "block");
