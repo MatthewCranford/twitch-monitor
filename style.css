@@ -112,13 +112,21 @@ a {
   .display-name {
     flex-basis: 40%;
     font-size: .9rem;
+    text-align: center;
+    margin-left: 2rem;
   }
 
   .status {
     font-style: italic;
-    flex-basis: 30%;
+    flex-basis: 40%;
     font-size: .8rem;
     text-align: center;
+    margin-left: auto;
+  }
+
+  .remove-icon {
+    cursor: pointer;
+    margin-left: 1rem;
   }
 
 
@@ -157,47 +165,51 @@ a {
     padding: .5rem 0;
   }
 
-  #streamer-header-title {
-    display: inline-block;
-    margin: 0 0 0 1rem;;
-    font-size: 2rem;
-  }
-
-  #streamer-add-btn {
-    font-size: 2rem;
-    line-height: 75%;
-    margin-right: auto;
-    margin-left: 1rem;
-    cursor: pointer;
-  }
-
-  #streamer-add-input {
-    margin-right: auto;
-    margin-left: 1rem;
-    /* display: none; */
-
-  }
-
-  #streamer-tabs {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    list-style: none;
-    margin: .25rem 0 0 0;
-    padding: 0;
-  }
-
-    #all-icon {
-      background-color: #464545;
+    #streamer-header-title {
+      display: inline-block;
+      margin: 0 0 0 1rem;;
+      font-size: 2rem;
     }
 
-    #online-icon {
-      background-color: #2eca36;
+    #streamer-add-btn {
+      font-size: 2rem;
+      line-height: 75%;
+      margin-right: auto;
+      margin-left: 1rem;
+      cursor: pointer;
     }
 
-    #offline-icon {
-      background-color: #e21d1d;
+    #streamer-form {
+      display: inline-block;
     }
+
+    #streamer-add-input {
+      margin-right: auto;
+      margin-left: 1rem;
+      /* display: none; */
+
+    }
+
+    #streamer-tabs {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      list-style: none;
+      margin: .25rem 0 0 0;
+      padding: 0;
+    }
+
+      #all-icon {
+        background-color: #464545;
+      }
+
+      #online-icon {
+        background-color: #2eca36;
+      }
+
+      #offline-icon {
+        background-color: #e21d1d;
+      }
 
 
   #streamer-list-container {

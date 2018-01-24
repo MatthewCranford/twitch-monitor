@@ -17,33 +17,37 @@
   </header>
   <main>
     <div id="streamer-container">
+      
       <header id="streamer-header">
-        <h4 id="streamer-header-title">Streamers</h4>
-        <span id="streamer-add-btn">+</span>
-        <form action="#">
-        <input id="streamer-add-input" type="text" placeholder="add username">
-        <input type="submit" value="Submit">
-        </form>
-        
-       
-        <ul id="streamer-tabs">
-          <li>
-            <div id="all-container" class="tab-container">
-              <span id="all-icon" class="tab-icon"></span><span id="all-text" class="tab-text">ALL</span>
-            </div>
-           </li>
-          <li>
-            <div id="online-container" class="tab-container">
-              <span id="online-icon" class="tab-icon"></span><span class="tab-text">ONLINE</span>
-            </div>
-          </li>
-          <li>
-            <div id="offline-container" class="tab-container">
-              <span id="offline-icon" class="tab-icon"></span><span class="tab-text">OFFLINE</span>
-            </div>
-          </li>
-        </ul>
+        <div class="row">
+          <div class="col">
+            <h4 id="streamer-header-title">Streamers</h4>
+            <span id="streamer-add-btn">+</span>
+            <form id="streamer-form" action="#">
+              <input id="streamer-add-input" type="text" placeholder="add username">
+              <input type="submit" value="Go">
+            </form>           
+          </div>
+          <ul id="streamer-tabs">
+            <li>
+              <div id="all-container" class="tab-container">
+                <span id="all-icon" class="tab-icon"></span><span id="all-text" class="tab-text">ALL</span>
+              </div>
+              </li>
+            <li>
+              <div id="online-container" class="tab-container">
+                <span id="online-icon" class="tab-icon"></span><span class="tab-text">ONLINE</span>
+              </div>
+            </li>
+            <li>
+              <div id="offline-container" class="tab-container">
+                <span id="offline-icon" class="tab-icon"></span><span class="tab-text">OFFLINE</span>
+              </div>
+            </li>
+          </ul>
+        </div>
       </header>
+
       <div id="streamer-list-container" >
         <ul id="streamer-list" type="none">
         </ul>

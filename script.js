@@ -1,41 +1,80 @@
 $(document).ready(function() {
   
   var users = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "boozycruzy"];
-  var streamerList = $("#streamer-list");
-  for (var i = 0; i < users.length; i++) {
-    (function(i) {
-      console.log(users[i]);
-      $("#streamer-list").append($("<li>").attr("id", i).attr("class", "streamer-list-item"));
 
-      $("#" + i).append($("<img>").attr("id", "logo" + i).attr("class", "logo"));
-      $("#" + i).append($("<a>").attr("id", "link" + i).attr("target", "_blank"));
-      $("#link" + i).append($("<span>").attr("id", "display-name" + i).attr("class", "display-name"));
-      $("#" + i).append($("<span>").attr("id", "status" + i).attr("class", "status"));
+  function createStreamerList() {
+    for (var i = 0; i < users.length; i++) {
+      (function(i) {
+        console.log(users[i]);
+        $("#streamer-list").append($("<li>").attr("id", i).attr("class", "streamer-list-item"));
 
-      var url = "https://wind-bow.gomix.me/twitch-api/users/" + users[i] + "/?callback=?";
-      // console.log(url); 
-      
-      $.getJSON(url, function(data) {
-        // console.log("entering json");
-        $("#logo" + i).attr("src",data.logo); 
-        $("#link" + i).attr("href", "https://www.twitch.tv/" + data.display_name)
-        $("#display-name" + i).html(data.display_name);
-        var id = data._id;
-        var url = "https://wind-bow.gomix.me/twitch-api/streams/" + users[i] + "/?callback=?";
-        // console.log(url);
+        $("#" + i).append($("<img>").attr("id", "logo" + i).attr("class", "logo"));
+        $("#" + i).append($("<a>").attr("id", "link" + i).attr("target", "_blank"));
+        $("#link" + i).append($("<span>").attr("id", "display-name" + i).attr("class", "display-name"));
+        $("#" + i).append($("<span>").attr("id", "status" + i).attr("class", "status"));
+        $("#" + i).append($("<span>").attr("class", "remove-icon").html("x"));
+
+        var url = "https://wind-bow.gomix.me/twitch-api/users/" + users[i] + "/?callback=?";
+        // console.log(url); 
+        
         $.getJSON(url, function(data) {
-          // console.log(url +"entering 2nd json");
-            if(data.stream === null) {
-              $("#status" + i).html("Offline");
-            }
-            else {
-              $("#status" + i).html(data.stream.channel.status);
-            }
-            colorListItem();
+          // console.log("entering json");
+          $("#logo" + i).attr("src",data.logo); 
+          $("#link" + i).attr("href", "https://www.twitch.tv/" + data.display_name)
+          $("#display-name" + i).html(data.display_name);
+          var id = data._id;
+          var url = "https://wind-bow.gomix.me/twitch-api/streams/" + users[i] + "/?callback=?";
+          // console.log(url);
+          $.getJSON(url, function(data) {
+            // console.log(url +"entering 2nd json");
+              if(data.stream === null) {
+                $("#status" + i).html("Offline");
+              }
+              else {
+                $("#status" + i).html(data.stream.channel.status);
+              }
+              colorListItem();
+          });
         });
-      });
-    })(i);
-  };
+      })(i);
+    };
+  }
+  createStreamerList();
+
+  function addNewStreamer() {
+    var i = parseInt($("#streamer-list li").last().attr("id")) + 1;
+    console.log(i);
+    $("#streamer-list").append($("<li>").attr("id", i).attr("class", "streamer-list-item"));
+
+        $("#" + i).append($("<img>").attr("id", "logo" + i).attr("class", "logo"));
+        $("#" + i).append($("<a>").attr("id", "link" + i).attr("target", "_blank"));
+        $("#link" + i).append($("<span>").attr("id", "display-name" + i).attr("class", "display-name"));
+        $("#" + i).append($("<span>").attr("id", "status" + i).attr("class", "status"));
+        $("#" + i).append($("<span>").attr("class", "remove-icon").html("x"));
+
+        var url = "https://wind-bow.gomix.me/twitch-api/users/" + users[i] + "/?callback=?";
+        // console.log(url); 
+        
+        $.getJSON(url, function(data) {
+          // console.log("entering json");
+          $("#logo" + i).attr("src",data.logo); 
+          $("#link" + i).attr("href", "https://www.twitch.tv/" + data.display_name)
+          $("#display-name" + i).html(data.display_name);
+          var id = data._id;
+          var url = "https://wind-bow.gomix.me/twitch-api/streams/" + users[i] + "/?callback=?";
+          // console.log(url);
+          $.getJSON(url, function(data) {
+            // console.log(url +"entering 2nd json");
+              if(data.stream === null) {
+                $("#status" + i).html("Offline");
+              }
+              else {
+                $("#status" + i).html(data.stream.channel.status);
+              }
+              colorListItem();
+          });
+        });
+      }
 
   function colorListItem() {
     $("#streamer-list li").each(function(index) {
@@ -53,10 +92,21 @@ $(document).ready(function() {
     $(this).css("margin-right", "inherit");
   });
 
-  $("#streamer-add-input").submit(function() {
-    
+  $("#streamer-form").submit(function() {
     var input = $("#streamer-add-input").val();
-    console.log("input"); 
+    console.log("Ready for action!");
+    console.log(input)
+    if (!(users.includes(input))) {
+      users.push(input);
+      addNewStreamer();
+    }
+    else {
+      alert("sorry! user already exist :(")
+    }
+  });
+
+  $(".remove-icon").click(function() {
+    $(this).closest("li").remove();
   });
 
   // $("#all-container").click(function() {
