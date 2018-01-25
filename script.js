@@ -88,8 +88,20 @@ $(document).ready(function() {
   }
 
   $("#streamer-add-btn").click(function() {
-    $("#streamer-add-input").css("display", "flex");
-    $(this).css("margin-right", "inherit");
+    $("#streamer-form").css("display", "block");
+    // $(this).css("margin-right", "inherit");
+    $("#page-mask").addClass("mask");
+  });
+
+  $("#streamer-remove-btn").click(function() {
+    $("#streamer-form").css("display", "block");
+    // $(this).css("margin-right", "inherit");
+    $("#page-mask").addClass("mask");
+  });
+
+  $("#input-close-btn").click(function() {
+    $("#streamer-form").css("display", "none");
+    $("#page-mask").removeClass("mask");
   });
 
   $("#streamer-form").submit(function() {
@@ -99,9 +111,10 @@ $(document).ready(function() {
     if (!(users.includes(input))) {
       users.push(input);
       addNewStreamer();
+      alert(input + " added to list!")
     }
     else {
-      alert("sorry! user already exist :(")
+      alert("Streamer is already added.")
     }
   });
 
@@ -109,11 +122,11 @@ $(document).ready(function() {
     $(this).closest("li").remove();
   });
 
-  // $("#all-container").click(function() {
-  //   $("#streamer-list li").each(function(index) {
-  //     $(this).css("display","flex");
-  //   });
-  // });
+  $("#all-container").click(function() {
+    $("#streamer-list li").each(function(index) {
+      $(this).css("display","flex");
+    });
+  });
 
   $("#online-container").click(function() {
     $("#streamer-list li").each(function(index) {
