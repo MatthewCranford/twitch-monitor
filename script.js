@@ -88,41 +88,36 @@ $(document).ready(function() {
   }
 
   $("#streamer-add-btn").click(function() {
-    $("#streamer-form").css("display", "block");
-    // $(this).css("margin-right", "inherit");
-    $("#page-mask").addClass("mask");
-  });
-
-  $("#close-btn").click(function() {
-    $("#streamer-form").css("display", "none");
-    $("#page-mask").removeClass("mask");
+    $("#modal-container").css("display","block");
+    $("#modal-form").css("display","block");
+    $("#modal-text").text("Add new streamer");
   });
 
   $("#streamer-remove-btn").click(function() {
     $("#done-btn").css("display", "block");
-    $("#page-mask").addClass("mask");
+    $("#modal-container").css("display","block");
     $(".remove-icon").css("display", "block");
+    $("#modal-text").text("Editor mode engaged!");
   });
 
-  $("#done-btn").click(function() {
-    $("#page-mask").removeClass("mask");
-    $("#done-btn").css("display", "none");
+  $("#close-btn").click(function() {
+    $("#modal-container").css("display","none");
+    $("#modal-form").css("display","none");
     $(".remove-icon").css("display", "none");
-    
   });
+
 
 
  
 
-  $("#streamer-form").submit(function() {
+  $("#modal-form").submit(function() {
     var input = $("#streamer-add-input").val();
     console.log("Ready for action!");
     console.log(input)
-    if (!(users.includes(input))) {
+    if (!(users.includes(input)) && input !== "") {
       users.push(input);
       addNewStreamer();
-      $("#streamer-form").css("display", "none");
-      $("#page-mask").removeClass("mask");
+      $("#modal-container").css("display", "none");
       $(".remove-icon").on("click", function() {
         $(this).parent().remove();
       });
@@ -130,7 +125,7 @@ $(document).ready(function() {
     else {
       alert("Streamer is already added.")
     }
-    $("#streamer-add-input").val("");
+    $("#modal-input").val("");
   });
 
   $(".remove-icon").on("click", function() {

@@ -11,17 +11,22 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.3/js/all.js"></script>
 </head>
 <body>
+  <div id="modal-container">
+    <div id="modal-content-container">
+      <span id="close-btn">x</span>
+      <p id="modal-text">Add new streamer</p>
+      <form id="modal-form" action="#">
+        <input id="modal-input" type="text" placeholder="username">  
+      </form>
+    </div>  
+  </div>
+  
   <header id="page-header"> 
     <span id="page-title-icon"><i class="fab fa-twitch"></i></span>
     <h1 id="page-title">Twitch Monitor</h1> 
   </header>
-  <div id="page-mask"></div>
   <main>
-      <form id="streamer-form" action="#">
-          <input id="streamer-add-input" type="text" placeholder="add new streamer...">
-          <span id="close-btn">x</span>  
-      </form>
-      <input id="done-btn" type="button" value="done editing">          
+              
     <div id="streamer-container">
       
       <header id="streamer-header" class="container-fluid">
