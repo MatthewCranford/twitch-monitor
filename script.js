@@ -42,8 +42,8 @@ $(document).ready(function() {
   createStreamerList();
 
   function addNewStreamer() {
-    var i = parseInt($("#streamer-list li").last().attr("id")) + 1;
-    console.log(i);
+    var i = users.length -1;
+    console.log(typeof i);
     $("#streamer-list").append($("<li>").attr("id", i).attr("class", "streamer-list-item"));
 
         $("#" + i).append($("<img>").attr("id", "logo" + i).attr("class", "logo"));
@@ -93,16 +93,26 @@ $(document).ready(function() {
     $("#page-mask").addClass("mask");
   });
 
-  $("#streamer-remove-btn").click(function() {
-    $("#streamer-form").css("display", "block");
-    // $(this).css("margin-right", "inherit");
-    $("#page-mask").addClass("mask");
-  });
-
-  $("#input-close-btn").click(function() {
+  $("#close-btn").click(function() {
     $("#streamer-form").css("display", "none");
     $("#page-mask").removeClass("mask");
   });
+
+  $("#streamer-remove-btn").click(function() {
+    $("#done-btn").css("display", "block");
+    $("#page-mask").addClass("mask");
+    $(".remove-icon").css("display", "block");
+  });
+
+  $("#done-btn").click(function() {
+    $("#page-mask").removeClass("mask");
+    $("#done-btn").css("display", "none");
+    $(".remove-icon").css("display", "none");
+    
+  });
+
+
+ 
 
   $("#streamer-form").submit(function() {
     var input = $("#streamer-add-input").val();
@@ -111,15 +121,20 @@ $(document).ready(function() {
     if (!(users.includes(input))) {
       users.push(input);
       addNewStreamer();
-      alert(input + " added to list!")
+      $("#streamer-form").css("display", "none");
+      $("#page-mask").removeClass("mask");
+      $(".remove-icon").on("click", function() {
+        $(this).parent().remove();
+      });
     }
     else {
       alert("Streamer is already added.")
     }
+    $("#streamer-add-input").val("");
   });
 
-  $(".remove-icon").click(function() {
-    $(this).closest("li").remove();
+  $(".remove-icon").on("click", function() {
+    $(this).parent().remove();
   });
 
   $("#all-container").click(function() {
