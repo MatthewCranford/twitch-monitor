@@ -1,6 +1,6 @@
 $(document).ready(function() {
   
-  var users = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas", "boozycruzy"];
+  var users = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "boozycruzy"];
 
   function createStreamerList() {
     for (var id = 0; id < users.length; id++) {
@@ -55,16 +55,15 @@ $(document).ready(function() {
          console.log(url); 
         
         $.getJSON(url, function(data) {
-          $("#modal-container").css("display", "none");
           console.log(data);
           console.log(data.display_name);
-          if (data.error === "Unprocessable Entity") {
+          if (data.error === "Unprocessable Entity" || data.error === "Not Found") {
             $("#modal-text").text("Invalid username");
             $("#" + id).remove();
             users.pop();
           }
           else {
-          
+          $("#modal-container").css("display", "none");
           console.log("entering json");
           $("#logo" + id).attr("src",data.logo); 
           $("#link" + id).attr("href", "https://www.twitch.tv/" + data.display_name)
@@ -91,10 +90,10 @@ $(document).ready(function() {
   function colorListItem() {
     $("#streamer-list li").each(function(index) {
       if($(this).find(":nth-child(3)").text() == "Offline") {
-        $(this).css("background-color","red");
+        $(this).css("background-color","#312c3b");
       }
       else {
-        $(this).css("background-color","green");
+        $(this).css("background-color","#3c2566");
       }
     });
   }
