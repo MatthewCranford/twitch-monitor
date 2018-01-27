@@ -190,9 +190,13 @@ a {
       width: 150px;
       box-sizing: border-box;
       border-radius: 25px;
-      padding: 5px;
+      padding: 5px 5px 5px 10px;
+      border: 2px solid black;
     }
 
+      #modal-input:focus {
+        outline: 0;
+      }
 
 #page-header {
   background-color: #6441A4;
