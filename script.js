@@ -13,6 +13,7 @@ $(document).ready(function() {
         $("#link" + id).append($("<span>").attr("id", "display-name" + id).attr("class", "display-name"));
         $("#" + id).append($("<span>").attr("id", "status" + id).attr("class", "status"));
         $("#" + id).append($("<span>").attr("class", "remove-icon").html("x"));
+        $("#" + id).prepend($("<span>").attr("class", "status-icon"));
 
         var url = "https://wind-bow.gomix.me/twitch-api/users/" + users[id] + "/?callback=?";
         // console.log(url); 
@@ -89,11 +90,13 @@ $(document).ready(function() {
 
   function colorListItem() {
     $("#streamer-list li").each(function(index) {
-      if($(this).find(":nth-child(3)").text() == "Offline") {
-        $(this).css("background-color","#312c3b");
+      if($(this).find(":nth-child(4)").text() == "Offline") {
+        $(this).addClass("offline-color");
+        $(this).find(".status-icon").addClass("offline-icon");
       }
       else {
-        $(this).css("background-color","#3c2566");
+        $(this).addClass("online-color");
+        $(this).find(".status-icon").addClass("online-icon");
       }
     });
   }
@@ -149,7 +152,7 @@ $(document).ready(function() {
   $("#online-container").click(function() {
     $("#streamer-list li").each(function(index) {
       console.log($(this));
-      if($(this).find(":nth-child(3)").text() == "Offline") {
+      if($(this).find(":nth-child(4)").text() == "Offline") {
         $(this).css("display","none");
         console.log("true");
       }
@@ -162,7 +165,7 @@ $(document).ready(function() {
   $("#offline-container").click(function() {
     $("#streamer-list li").each(function(index) {
       console.log($(this));
-      if($(this).find(":nth-child(3)").text() !== "Offline") {
+      if($(this).find(":nth-child(4)").text() !== "Offline") {
         $(this).css("display","none");
         console.log("true");
       }

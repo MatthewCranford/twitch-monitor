@@ -20,7 +20,7 @@ footer {
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
 }
 
   a:hover {
@@ -33,12 +33,14 @@ a {
     filter: brightness(55%);
   }
 
+  
+
 /* ====================
     CLASSES
 ======================= */
 
 .tab-container {
-  background-color: rgb(163, 162, 162);
+  background-color: #d3d3d3;
   width: 15px;
   height: 15px;
   text-align: center;
@@ -100,6 +102,10 @@ a {
   justify-content: space-between;
 }
 
+  .streamer-list-item:hover {
+    filter: brightness(110%);
+  }
+
 .logo {
   width: 50px;
   height: 50px;
@@ -111,7 +117,8 @@ a {
   flex-basis: 40%;
   font-size: .9rem;
   text-align: center;
-  margin-left: 2rem;
+  margin-left: 1.5rem;
+  color: #b89cecfa;
 }
 
 .status {
@@ -133,7 +140,31 @@ a {
   z-index: 2;
 }
 
+.online-color {
+  background-color: #2d243a;
+}
 
+.offline-color {
+  background-color: #1e1725;
+}
+
+.online-icon {
+  margin: 0 .8rem 0 0;
+  border: solid 1px black;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  background-color: #2eca36;
+}
+
+.offline-icon {
+  margin: 0 .8rem 0 0;
+  border: solid 1px black;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  background-color: #e21d1d;
+}
 /* ====================
     IDs
 ======================= */
@@ -280,6 +311,14 @@ color:white;
   flex-basis: 2rem;
   background-color: #f1f1f1;
   padding: none;
+}
+
+#footer-text {
+  color: #dadada;
+}
+
+#footer-text a {
+  color: #dadada;
 }
 
 /* ====================
