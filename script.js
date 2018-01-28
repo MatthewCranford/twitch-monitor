@@ -51,6 +51,7 @@ $(document).ready(function() {
         $("#link" + id).append($("<span>").attr("id", "display-name" + id).attr("class", "display-name"));
         $("#" + id).append($("<span>").attr("id", "status" + id).attr("class", "status"));
         $("#" + id).append($("<span>").attr("class", "remove-icon").html("x"));
+        $("#" + id).prepend($("<span>").attr("class", "status-icon"));
 
         var url = "https://wind-bow.gomix.me/twitch-api/users/" + users[id] + "/?callback=?";
          console.log(url); 
@@ -140,6 +141,7 @@ $(document).ready(function() {
   });
 
   $(".remove-icon").on("click", function() {
+    console.log("WORKING");
     $(this).parent().remove();
   });
 
