@@ -102,7 +102,8 @@ $(document).ready(function() {
     });
   }
 
-  $("#streamer-add-btn").click(function() {
+  $("#clickme").click(function() {
+    $(this).css("transform", "rotate(360deg)");
     $("#modal-container").css("display","block");
     $("#modal-form").css("display","block");
     $("#modal-text").text("Add new streamer");

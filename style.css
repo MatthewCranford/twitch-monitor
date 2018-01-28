@@ -123,7 +123,7 @@ a {
   font-size: .9rem;
   text-align: center;
   margin-left: auto;
-  margin-right: .5rem;
+  margin-right: 2rem;
   width: 100px;
 }
 
@@ -136,7 +136,13 @@ a {
   margin-right: 1rem;
   display: none;
   z-index: 2;
+  animation: slideleft 1s ease-in-out;
 }
+
+  @keyframes slideleft {
+    from {right: -50px;}
+    to {right: 0px;}
+  }
 
 .online-color {
   background-color: #2d243a;
@@ -187,7 +193,7 @@ a {
   border: 2px solid #6441A4;
   border-radius: 5px;
   color:white;
-  animation: dropdown 1s ease-in-out, fadein;
+  animation: dropdown .9s ease-in-out, fadein;
   position: relative;
   top: 25px;
 }
@@ -196,11 +202,6 @@ a {
   from {top: -150px;}
   to {top: 25px;}
 }
-/* 
-@keyframes fadein {
-  from {opacity: 0;}
-  to {opacity: 1;}
-} */
 
 #close-btn {
   position: relative;
@@ -260,32 +261,52 @@ a {
   color: #f5f5f5;
 }
 
-#streamer-header {
-  padding: 1rem 0 .5rem;
+#streamer-col-left {
+  display: row;
+  flex-direction: column;
+  align-items: center;
 }
 
+#streamer-header {
+  padding: 1rem 0 .5rem;
+  flex-basis: 100%;
+}
 
 #streamer-header-title {
-  margin: 0 0 0 1rem;;
+  margin: 0 0 1rem 1rem;
   font-size: 1.7rem;
 }
 
 #streamer-add-btn {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   display: inline-block;
-  line-height: 30px;
   margin-right: auto;
-  margin-left: 1rem;
+  margin-left: 2.2rem;
   cursor: pointer;
+  transition: all .25s ease;
+}
+
+#clickme {
+  position: relative;
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  margin-left: 2.2rem;
 }
 
 #streamer-remove-btn {
-  font-size: 3rem;
   display: inline-block;
-  line-height: 30px;
+  width: 24px;
+  height: 24px;
   margin-right: auto;
   margin-left: 1rem;
   cursor: pointer;
+  transition: all .25s ease;
+}
+
+#streamer-add-btn:hover,
+#streamer-remove-btn:hover {
+  transform: scale(1.25);
 }
 
 #streamer-tabs {
