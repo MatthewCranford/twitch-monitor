@@ -56,7 +56,7 @@ a {
 }
 
   .edit-icon:hover {
-    transform: scale(1.25);
+    transform: scale(1.2);
   }
 
 
@@ -185,6 +185,14 @@ a {
   height: 12px;
   width: 12px;
   background-color: #e21d1d;
+}
+
+.flip {
+  transform: rotate(250deg);
+}
+
+#add-icon {
+  transition: all 1s;
 }
 /* ====================
     IDs
@@ -389,9 +397,6 @@ a {
     border-radius: 5px;
   }
 
-  #streamer-list-container {
-
-  }
  }
 
 /* // Extra large devices (large desktops, 1200px and up) */

@@ -103,7 +103,6 @@ $(document).ready(function() {
   }
 
   $("#add-btn-container").click(function() {
-    $(".edit-icon").css("transform", "rotate(360deg)");
     $("#modal-container").css("display","block");
     $("#modal-form").css("display","block");
     $("#modal-text").text("Add new streamer");
