@@ -102,7 +102,7 @@ $(document).ready(function() {
     });
   }
 
-  $("#clickme").click(function() {
+  $("#add-btn-container").click(function() {
     $(this).css("transform", "rotate(360deg)");
     $("#modal-container").css("display","block");
     $("#modal-form").css("display","block");
@@ -110,7 +110,7 @@ $(document).ready(function() {
     $("#modal-input").focus();
   });
 
-  $("#streamer-remove-btn").click(function() {
+  $("#remove-btn-container").click(function() {
     $("#done-btn").css("display", "block");
     $("#modal-container").css("display","block");
     $(".remove-icon").css("display", "block");

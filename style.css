@@ -40,6 +40,26 @@ a {
     CLASSES
 ======================= */
 
+
+.edit-icon-container {
+  cursor: pointer;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: auto;
+  text-align: center;
+}
+
+.edit-icon {
+  font-size: 1.5rem;
+  transition: all .25s ease;
+}
+
+  .edit-icon:hover {
+    transform: scale(1.25);
+  }
+
+
 .tab-container {
   background-color: #d3d3d3;
   width: 18px;
@@ -277,36 +297,12 @@ a {
   font-size: 1.7rem;
 }
 
-#streamer-add-btn {
-  font-size: 1.5rem;
-  display: inline-block;
-  margin-right: auto;
-  margin-left: 2.2rem;
-  cursor: pointer;
-  transition: all .25s ease;
-}
-
-#clickme {
-  position: relative;
-  display: inline-block;
-  height: 24px;
-  width: 24px;
+#add-btn-container {
   margin-left: 2.2rem;
 }
 
-#streamer-remove-btn {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  margin-right: auto;
+#remove-btn-container {
   margin-left: 1rem;
-  cursor: pointer;
-  transition: all .25s ease;
-}
-
-#streamer-add-btn:hover,
-#streamer-remove-btn:hover {
-  transform: scale(1.25);
 }
 
 #streamer-tabs {
