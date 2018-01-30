@@ -123,7 +123,8 @@ $(document).ready(function() {
     $("#modal-input").val("");
   });
 
-  $("#modal-form").submit(function() {
+  $("#modal-form").submit(function(event) {
+    event.preventDefault();
     var input = $("#modal-input").val();
     console.log(input)
     if (!(users.includes(input)) && input !== "") {

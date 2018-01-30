@@ -400,4 +400,12 @@ a {
  }
 
 /* // Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) { ... }
+@media (min-width: 1200px) { 
+  #streamer-container {
+    width: 60%;
+    margin: auto;
+    margin-top: 2rem;
+    border: 2px solid #272627;
+    border-radius: 5px;
+  }
+}
